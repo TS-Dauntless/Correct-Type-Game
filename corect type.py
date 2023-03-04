@@ -1,5 +1,6 @@
 import pygame
 import random
+from math import ceil
 
 # variable Declarations
 
@@ -333,7 +334,7 @@ def show_timer():
     To show the remaining time left for this round in the top middle
     """
 
-    text = pygame.font.Font("freesansbold.ttf", 30).render(f"Timer : {(timer_counter / 14).__ceil__()}",
+    text = pygame.font.Font("freesansbold.ttf", 30).render(f"Timer : {int(ceil(timer_counter / 14))}",
                                                            True, (0, 0, 255))
     pos = text.get_rect(midtop=(400, 0))
     screen.blit(text, pos)
